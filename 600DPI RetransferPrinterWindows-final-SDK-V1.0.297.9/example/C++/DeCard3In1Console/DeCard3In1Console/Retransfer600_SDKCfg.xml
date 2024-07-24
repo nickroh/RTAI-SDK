@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PrtCfg>
+	<!-- 打印设置 -->
+	<Print>
+		<EntireRotate180>0</EntireRotate180>	<!-- 整体图像旋转180度，该功能主要是为了和驱动效果同步。 0:不旋转（默认）; 1:旋转（驱动效果）; -->
+	</Print>
+	<!-- 套打设置（combined-printing） -->
+	<CmbnPrt>
+		<SaveTempPic>0</SaveTempPic>	<!-- 是否保存套打过程中产生的中间图层。 0:不保存（默认）; 1:保存;该功能暂时不做实现 -->		
+		<CmbnPrtDebug>0</CmbnPrtDebug> <!-- 是否保存最终用于打印的底图和掩码图，主要用于调试和排错 0:不保存（默认）; 1:保存;-->
+	</CmbnPrt>
+	<!-- 日志设置 -->
+	<Log>
+		<Level>5</Level>	
+		<!-- 日志级别。  
+		LVL_ERROR    0  
+		LVL_WARNING  1
+		LVL_INFO     2
+		LVL_LIB		 3  //各模块库日志
+		LVL_LOGPAR	 4	//显示参数日志
+		LVL_COMMAND  5  //用于显示打印指令数据
+		LVL_ALL		 6 -->
+		<OutputIORaw>0</OutputIORaw>	<!-- 是否输出IO原始数据。0:不输出（默认）; 1:输出; -->
+		<LogPath>%temp%</LogPath>   <!-- 日志保存路径 -->
+		<WriteMode>1</WriteMode> <!-- 多线程下是否每个线程单独创建一份日志文件，0：多线程合用一份日志文件；1：每条线程有自己的日志文件 -->
+	</Log>
+	<!-- 读卡器设置 -->
+	<CardReader>
+		<Vendor>0</Vendor>		<!-- 制造商。none :不依赖读卡器库； 0 ：德卡 -->
+		<Model>0</Model>		<!-- 0 三合1 ；1 非接 ；2：触头-->
+		<ActionNeedCardReader>1</ActionNeedCardReader> <!--进出卡是否需要读卡器配合。0：不需要 ；1：需要；三合一读卡器应为1-->
+	</CardReader>
+</PrtCfg>
